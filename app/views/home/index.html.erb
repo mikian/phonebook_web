@@ -1,4 +1,16 @@
 <div class="row">
+  <div class="col-sm-12">
+    <%= form_tag url: '', id: 'contact' do %>
+      <%= hidden_field_tag :id %>
+      <%= label_tag 'First Name' %>
+      <%= text_field_tag :first_name %>
+      <%= label_tag 'Last Name' %>
+      <%= text_field_tag :last_name %>
+      <%= label_tag 'Number' %>
+      <%= text_field_tag :number %>
+      <%= submit_tag 'Save' %>
+    <% end %>
+  </div>
 </div>
 
 <div class="row">
@@ -13,8 +25,8 @@
       </thead>
       <tbody data-bind="foreach: contacts">
         <tr>
-          <td data-bind="text: $data.firstName"></td>
-          <td data-bind="text: lastName"></td>
+          <td data-bind="text: first_name"></td>
+          <td data-bind="text: last_name"></td>
           <td data-bind="text: number"></td>
         </tr>
       </tbody>
